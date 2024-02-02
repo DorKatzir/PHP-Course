@@ -43,7 +43,7 @@
     <?php foreach ($books as $key => $book) : ?>
         <div class="card">
             <dl>
-                <dt class="muted-text">Book <?= $key+1 ?></dt>
+                <dt class="muted-text"><?= $key+1 ?></dt>
                 <dd><span class="muted-text">Name:</span> <?= $book['name'] ?></dd>
                 <dd><span class="muted-text">Year:</span> <?= $book['year'] ?></dd>
                 <dd><span class="muted-text">Written by: </span> <?= $book['author'] ?></dd>
