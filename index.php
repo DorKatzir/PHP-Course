@@ -1,5 +1,5 @@
 <?php 
-    $title="Associative Arrays"; 
+    $title="Functions and Filters"; 
     $books = [
         [
             "name" => "Do Androids Dream of Electric Sheep",
@@ -21,9 +21,29 @@
             "author" => 'Andy Weir',
             "purchaseUrl" => '#',
             "cover" =>"./assets/covers/hailMary.jpg"
+        ],
+        [
+            "name" => "The Martian",
+            "year" => 2011,
+            "author" => 'Andy Weir',
+            "purchaseUrl" => '#',
+            "cover" =>"./assets/covers/martian.webp"
         ]
     
     ];
+
+    function filterByAuthor($books, $author){
+
+            $authorBooks = [];
+
+            foreach($books as $book){
+
+                if($book['author'] === $author){
+                    $authorBooks [] = $book;
+                } 
+            }
+            return $authorBooks;  
+    }
 
 ?>
 
@@ -39,18 +59,18 @@
 </head>
 <body>
     <h2 class="muted-text">PHP - <?= $title ?></h2>
-    <h3 class="muted-text">Recommended Books</h3>
-    <?php foreach ($books as $key => $book) : ?>
-        <div class="card">
-            <dl>
-                <dt class="muted-text"><?= $key+1 ?></dt>
-                <dd><span class="muted-text">Name:</span> <?= $book['name'] ?></dd>
-                <dd><span class="muted-text">Year:</span> <?= $book['year'] ?></dd>
-                <dd><span class="muted-text">Written by: </span> <?= $book['author'] ?></dd>
-            </dl>
-            <a class="button button1" href="<?= $book['purchaseUrl'] ?>">Buy this book</a>
-            <img class="cover" src="<?= $book['cover'] ?>" alt="">
-        </div> 
-    <?php endforeach; ?> 
+    <h3 class="muted-text">Recommended Books Filtered by Author</h3>
+    <?php foreach (filterByAuthor($books, 'Andy Weir') as $key => $book) : ?>
+            <div class="card">
+                <dl>
+                    <dt class="muted-text"><?= $key+1 ?></dt>
+                    <dd><span class="muted-text">Name:</span> <?= $book['name'] ?></dd>
+                    <dd><span class="muted-text">Year:</span> <?= $book['year'] ?></dd>
+                    <dd><span class="muted-text">Written by: </span> <?= $book['author'] ?></dd>
+                </dl>
+                <a class="button button1" href="<?= $book['purchaseUrl'] ?>">Buy this book</a>
+                <img class="cover" src="<?= $book['cover'] ?>" alt="">
+            </div>
+    <?php endforeach; ?>  
 </body>
 </html>
