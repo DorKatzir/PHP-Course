@@ -1,4 +1,8 @@
-<?php $title="PHP-Course"; ?>
+<?php
+ $title="PHP-Course";
+ $name = "Dark Matter"; 
+ $isRead = true;
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,5 +15,6 @@
 </head>
 <body>
     <h2>PHP - Complete Laracasts Course</h2>
+    <p><?= $isRead ? "You have read the $name" : "You have NOT read the $name"  ?></p>
 </body>
 </html>
