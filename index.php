@@ -1,5 +1,5 @@
 <?php 
-    $title="Functions and Filters"; 
+    $title="Lambda Functions"; 
 
     $movies = [
         [
@@ -8,7 +8,7 @@
             "description" => "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
             "year" => 1994,
             "director" => "Frank Darabont",
-            "poster" => "poster.jpg"
+            "poster" => ""
         ],
         [
             "title" => "The Godfather",
@@ -16,7 +16,7 @@
             "description" => "The aging patriarch of an organized crime dynasty transfers control of his   clandestine empire to his reluctant son.",
             "year" => 1972,
             "director" => "Francis Ford Coppola",
-            "poster" => "poster.jpg"
+            "poster" => ""
         ],
         [
             "title" => "The Dark Knight",
@@ -44,15 +44,10 @@
         ]
     ];
 
-    function filterByYear($movies) {
-        $filteredMovies = [];
-        foreach($movies as $movie){
-            if($movie['year'] >= 2000){
-                $filteredMovies[] = $movie;
-            }
-        }
-        return $filteredMovies;
-    }
+
+    $filteredByYear = array_filter($movies, function($movie){
+        return $movie['director'] === 'Christopher Nolan';
+    });
 
 ?>
 
@@ -68,17 +63,19 @@
 </head>
 <body>
     <h2 class="muted-text">PHP - <?= $title ?></h2>
-    <h3 class="muted-text">Movies Filtered by released year 2000 or higher </h3>
-    <?php foreach (filterByYear($movies) as $movie) : ?>
-            <div class="card">
-                <img class="poster" src="<?= $movie['poster'] ?>">
-                <ul>
-                    <!-- <li><span class="muted-text">Movie</span></li> -->
-                    <li><?= $movie['title'] ?></li>
+    <h3 class="muted-text">Movies</h3>
 
+
+    <?php foreach ($filteredByYear as $movie) : ?>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="poster" src="<?= $movie['poster'] ?>">
+                </div>
+                <ul>
+                    <li><?= $movie['title'] ?></li>
                     <li><span class="muted-text">Year</span></li>
                     <li> <?= $movie['year'] ?></li>
-
                     <li><span class="muted-text">Director</span></li>
                     <li> <?= $movie['director'] ?></li>
                 </ul>

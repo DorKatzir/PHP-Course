@@ -18,6 +18,12 @@
 span{
   font-size: small;
 }
+.img-wrapper{
+  border-radius: 8px;
+  width: 100px;
+  height: 125px;
+  background-color: #0000003d;
+}
 
 .poster{
   border-radius: 8px;
