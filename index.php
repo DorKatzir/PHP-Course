@@ -43,7 +43,7 @@
 </head>
 <body>
     <h2 class="muted-text">PHP - <?= $title ?></h2>
-    <h3 class="muted-text">Recommended Books</h3>
+    <h3 class="muted-text">Books - Filtered by years between 1950-2020</h3>
 
     <?php foreach ($filterByYear as $key => $book) : ?>
         <div class="card">
