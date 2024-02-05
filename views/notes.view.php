@@ -10,7 +10,7 @@
 
                 <li>
                     <a href="./note?id=<?= $note['id'] ?>" class="text-blue-500 hover:underline">
-                        <?= $note['body'] ?> &rarr;
+                        <?= htmlspecialchars($note['body']) ?> &rarr;
                     </a>
                 </li>
 
