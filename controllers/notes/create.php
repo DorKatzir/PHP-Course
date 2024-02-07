@@ -1,15 +1,13 @@
 <?php 
 
-require 'Validator.php';
+require base_path('Core/Validator.php');
 
-$config = require 'config.php';
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
-$heading = 'Create Note';
+$errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-    $errors = [];
 
     if (! validator::string($_POST['body'], 1, 500) ){
         $errors['body'] = 'Description must be between 1-500 characters';
@@ -21,12 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             'body' => $_POST['body'],
             'user_id' => 1
         ]);
-    }
-
-    
+    }   
 
 }
 
-require 'views/notes/create.view.php';
 
+view('notes/create.view.php', [
+    'heading' => 'Create Note',
+    'errors' => $errors
+]);
 
