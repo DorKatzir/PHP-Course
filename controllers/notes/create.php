@@ -11,6 +11,8 @@ $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+    
+
     if (! validator::string($_POST['body'], 1, 500) ){
         $errors['body'] = 'Description must be between 1-500 characters';
     }
