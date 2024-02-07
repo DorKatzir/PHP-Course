@@ -16,8 +16,17 @@
             <p class="mb-4 text-base text-neutral-600">
                 <?= htmlspecialchars($note['body']) ?>
             </p>
-            
         </div>
+
+         <form method="POST" class="py-6 m-2">
+            <input type="hidden" name="id" value="<?= $note['id'] ?>">
+            <button href="#"
+                type="submit"
+                class="inline-block float-right rounded-lg bg-red-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-none transition duration-150 ease-in-out hover:bg-red-600 hover:shadow-[0_4px_9px_-4px_#3b71ca] focus:bg-red-600 focus:outline-none focus:ring-0 active:bg-red-700">Delete Note
+            </button>
+            
+        </form>
+
     </div>
 </main>
 
