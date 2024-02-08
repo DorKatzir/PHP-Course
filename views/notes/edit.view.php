@@ -4,7 +4,7 @@
 <?php require base_path('views/partials/banner.php'); ?>
 
 <main>
-    <div class="mx-auto max-w-4xl py-6 sm:px-6 lg:px-8">
+    <div class="max-w-2xl px-4 py-6 md:px-6 lg:px-8 xl:px-16">
 
 
         <div class="block py-5 px-5 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:py-10 md:px-20">
@@ -21,18 +21,18 @@
                 </div>
 
 
-                <div class="mt-6 flex items-center justify-between gap-x-9">
+                <div class="flex justify-end mt-6">
                     <!-- UPDATE BTN -->
                     <div class="">
                         <button type="submit"
-                            class="inline-block rounded-lg bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Update Note
+                            class="inline-block rounded-lg bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-none transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Update Note
                         </button>
                     
 
                     <!-- CANCEL BTN -->
                     
                         <a href="/notes"
-                            class="inline-block rounded-lg bg-gray-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-gray-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-gray-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-gray-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Cancel
+                            class="inline-block rounded-lg bg-gray-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-none transition duration-150 ease-in-out hover:bg-gray-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Cancel
                         </a>
                     </div>
 
@@ -43,14 +43,7 @@
                         <span></span>
                     <?php endif; ?>
 
-                    <!-- Delete BTN -->
-                    <!-- <div class=""> 
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button
-                            type="submit"
-                            class="inline-block float-right rounded-lg bg-red-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-none transition duration-150 ease-in-out hover:bg-red-600 hover:shadow-[0_4px_9px_-4px_#3b71ca] focus:bg-red-600 focus:outline-none focus:ring-0 active:bg-red-700">Delete Note
-                        </button>
-                    </div> -->
+  
 
                 </div>
 
