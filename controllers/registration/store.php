@@ -25,14 +25,32 @@ if (!empty($errors)) {
 
 $db = App::resolve(Database::class);
 // check if the account already exists
-$result = $db->query('SELECT * FROM users WHERE email = :email', [
+$user = $db->query('SELECT * FROM users WHERE email = :email', [
     'email' => $email
 ])->find();
 
-dd($result);
-
-
-    // if yes, redirect to login page
+if ($user) {
+    // then someone whith that email already exists and hhas an account
+    // If yes, redirect to a login page
+    header('location: /');
+    exit();
+    
+} else {
     // if not, save one to the database, and then log the user in, and redirect.
+    $db->query('INSERT INTO users (email, password) VALUES (:email, :password)', [
+        'email' => $email,
+        'password' => $password
+    ]);
+
+    // mark that the user has logged in.
+    $_SESSION['user'] = [
+        'email' => $email
+    ];
+
+    header('location: /');
+    exit();
+
+}
+
 
 

@@ -1,7 +1,7 @@
 <?php 
 
 
-$_SESSION['name'] = 'Dror';
+// $_SESSION['name'] = 'Dror';
 
 
 view('index.view.php', [
