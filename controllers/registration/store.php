@@ -3,11 +3,16 @@ use Core\App;
 use Core\Database;
 use Core\Validator;
 
+$name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
 // validate the form inputs
 $errors = [];
+
+if (!Validator::string($name, 3, 20)) {
+    $errors['name'] = 'User Name must be min 3 - 20 max characters';
+}
 
 if (!Validator::email($email)) {
     $errors['email'] = 'Please provide a valid email address';
@@ -37,13 +42,15 @@ if ($user) {
     
 } else {
     // if not, save one to the database, and then log the user in, and redirect.
-    $db->query('INSERT INTO users (email, password) VALUES (:email, :password)', [
+    $db->query('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)', [
+        'name' => $name,
         'email' => $email,
         'password' => $password
     ]);
 
     // mark that the user has logged in.
     $_SESSION['user'] = [
+        'name' => $name,
         'email' => $email
     ];
 
