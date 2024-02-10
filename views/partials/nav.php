@@ -36,7 +36,7 @@
                     <div class="relative ml-3">
                         <div class="flex items-center gap-4">
                             <span class="font-medium txt-brand">
-                               Hello, <?= $_SESSION['user']['name'] ?? 'Guest' ?> 
+                               <?= $_SESSION['user']['name'] ?? 'Guest' ?> 
                             </span>
                         <?php if ( $_SESSION['user'] ?? false ) :  ?>  
                             <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">

@@ -35,7 +35,7 @@ $user = $db->query('SELECT * FROM users WHERE email = :email', [
 ])->find();
 
 if ($user) {
-    // then someone whith that email already exists and hhas an account
+    // then someone whith that email already exists and has an account
     // If yes, redirect to a login page
     header('location: /');
     exit();
@@ -43,14 +43,14 @@ if ($user) {
 } else {
     // if not, save one to the database, and then log the user in, and redirect.
     $db->query('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)', [
-        'name' => $name,
+        'name' => ucfirst($name),
         'email' => $email,
-        'password' => $password
+        'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
     // mark that the user has logged in.
     $_SESSION['user'] = [
-        'name' => $name,
+        'name' => ucfirst($name),
         'email' => $email
     ];
 
