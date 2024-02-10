@@ -15,7 +15,7 @@
 
         <div class="mt-6 sm:w-full sm:max-w-sm">
             <!-- FORM START -->
-            <form class="space-y-4" action="/sessions" method="POST">
+            <form class="space-y-4" action="/session" method="POST">
 
 
                 <!-- EMAIL -->
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="mt-2">
-                    <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Email address" value="<?= $_POST['email'] ?? '' ?>">
+                    <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Email address" value="<?= $_POST['email'] ?? 'dror@test.com' ?>">
                     </div>
                 </div>
 
