@@ -1,4 +1,5 @@
 <?php 
+use Core\Session;
 use Core\Response;
 
 function dd($value){
@@ -42,4 +43,8 @@ function view($path, $attributes = []){
 function redirectAndExit($path){
     header("location: {$path}");
     exit();
+}
+
+function old($key, $default = '') {
+    return Session::get('old')[$key] ?? $default;
 }
