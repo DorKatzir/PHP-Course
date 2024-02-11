@@ -1,0 +1,16 @@
+{
+    "name": "katzi/php-course",
+    "authors": [
+        {
+            "name": "Dor Katzir",
+            "email": "katzirdor@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
